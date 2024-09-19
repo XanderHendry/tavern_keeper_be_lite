@@ -3,8 +3,7 @@
 set -o errexit
 
 bundle install
-bundle exec rails assets:precompile
-bundle exec rails assets:clean
+./bin/rails db:{drop,create,migrate,seed}
 
 # If you're using a Free instance type, you need to
 # perform database migrations in the build command.
